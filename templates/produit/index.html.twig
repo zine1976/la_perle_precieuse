@@ -1,20 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProduitController!{% endblock %}
+{% block title %}produits
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/MAMP/htdocs/la_perle_precieuse/src/Controller/ProduitController.php'|file_link(0) }}">src/Controller/ProduitController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/MAMP/htdocs/la_perle_precieuse/templates/produit/index.html.twig'|file_link(0) }}">templates/produit/index.html.twig</a></code></li>
-    </ul>
-</div>
+	<div class="ajoutprodtitre">
+		<h1>liste des produits</h1>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom</th>
+				<th>stock</th>
+				<th>image</th>
+
+				<th>prix</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for prod in produit %}
+				<tr>
+					<td>{{ prod.id }}</td>
+					<td>{{ prod.nom }}</td>
+					<td>{{ prod.stock }}</td>
+					<td>
+						<img src="{{prod.image}}" alt="" class="imgreg img-fluid thumbnail">
+					</td>
+
+					<td>{{ prod.prix }}&nbsp;€</td>
+					<td>{# <a href="{{path('app_detailproduit',{id: prod.id})}}" class="btn btn-primary">detail</td>
+												{% if is_granted('ROLE_ADMIN') %} #}
+
+						{# <td>
+														<a class="btn btn-danger" href="{{path('app_delete',{id: prod.id})}}">Supprimer un produit</a>
+													</td> #}
+						{# {% endif %} #}
+					</td>
+				</tr>
+
+				{# {% else %} #}
+				{# <tr>
+									<td colspan="5">aucun produit trouvé</td>
+								{# </tr> #}
+			{% endfor %}
+		</tbody>
+	</table>
+
 {% endblock %}
