@@ -20,7 +20,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=180)
      */
     private $email;
 
@@ -46,9 +46,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $Prenom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
-    private $Is_verified;
+    private $Is_verified = false;
 
     public function getId(): ?int
     {
@@ -163,12 +163,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getIsVerified(): ?string
+    public function getIsVerified(): bool
     {
         return $this->Is_verified;
     }
 
-    public function setIsVerified(string $Is_verified): self
+    public function setIsVerified(bool $Is_verified): self
     {
         $this->Is_verified = $Is_verified;
 
