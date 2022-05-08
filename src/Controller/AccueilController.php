@@ -17,4 +17,14 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+     /**
+     * @Route("/retour", name="app_retour")
+     */
+    public function retour(): Response
+    {
+        return $this->render('accueil/retour.html.twig',
+         [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 }
