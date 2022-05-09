@@ -22,11 +22,12 @@
   .rowi {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 100px;
+
   }
-  .carotte {
-    height: 300px;
-    width: 300px;
-    margin-bottom: 20px;
+  .carouseldet {
+    height: 250px;
+    width: 250px;
   }
   .surplus {
     display: flex;
