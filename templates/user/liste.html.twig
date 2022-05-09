@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}liste
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="ajoutprodtitre">
+		<h1>liste des utilisateurs</h1>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>prenom</th>
+				<th>email</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for us in user %}
+				<tr>
+					<td>{{ us.nom }}</td>
+					<td>{{ us.prenom }}</td>
+					<td>{{ us.email }}</td>
+					
+
+
+						<td>
+														<a class="btn btn-danger" href="{{path('app_delete',{id: us.id})}}">Supprimer un utilisateur</a>
+													</td>
+					</td>
+				</tr>
+
+				{% else %} 
+				 <tr>
+									<td colspan="5">aucun utilisateur trouvé</td>
+								</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}
