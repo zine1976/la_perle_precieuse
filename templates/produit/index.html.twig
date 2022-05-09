@@ -32,20 +32,20 @@
 					</td>
 
 					<td>{{ prod.prix }}&nbsp;€</td>
-					<td>{# <a href="{{path('app_detailproduit',{id: prod.id})}}" class="btn btn-primary">detail</td>
-												{% if is_granted('ROLE_ADMIN') %} #}
+					<td><a href="{{path('app_detailproduit',{id: prod.id})}}" class="btn btn-primary">detail</td>
+												{% if is_granted('ROLE_ADMIN') %}
 
 						<td>
 														<a class="btn btn-danger" href="{{path('app_delete',{id: prod.id})}}">Supprimer un produit</a>
 													</td>
-						{# {% endif %} #}
+						{% endif %}
 					</td>
 				</tr>
 
-				{# {% else %} #}
-				{# <tr>
+				{% else %} #}
+				 <tr>
 									<td colspan="5">aucun produit trouvé</td>
-								{# </tr> #}
+								</tr>
 			{% endfor %}
 		</tbody>
 	</table>

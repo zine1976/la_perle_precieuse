@@ -46,6 +46,18 @@ class ProduitRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
+    public function getAllProduits(array $ids)
+    {
+        return $this
+            ->getEntityManager()
+            ->createQueryBuilder()
+            ->select('p')
+            ->from(Produit::class, 'p', 'p.id')
+            ->where('p.id in (:ids)')
+            ->setParameter('ids', $ids)
+            ->getQuery()
+            ->getResult();
+    }
 
     // /**
     //  * @return Produit[] Returns an array of Produit objects

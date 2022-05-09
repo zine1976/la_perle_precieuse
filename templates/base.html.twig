@@ -42,12 +42,12 @@
 
 						<a class="nav-link" href="{{path('app_registration')}}">Inscription</a>
 						<a class="nav-link" href="{{path('app_accueil')}}">Accueil</a>
-						{# {% if is_granted('ROLE_ADMIN') %} #}
+						{% if is_granted('ROLE_ADMIN') %}
 						<a class="nav-link" href="">Commandes</a>
 
 						<a class="nav-link" href="{{path('app_produit')}}">Produits</a>
 						<a class="nav-link" href="{{path('app_ajout')}}">Ajouter un produit</a>
-						{# {% endif %} #}
+						{% endif %}
 
 					{% if app.user %}
 											<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
@@ -57,6 +57,8 @@
 										{% endif %}
 
 						<a class="nav-link" href="{{ path('app_user') }}">Mon compte</a>
+					<a class="nav-link" href="{{ path('app_panier') }}">Mon panier</a>
+
 
 
 					</nav>

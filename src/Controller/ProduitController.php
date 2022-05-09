@@ -22,13 +22,13 @@ class ProduitController extends AbstractController
         ]);
     }
     /**
-     * @Route("/produit/indexdetail{id}", name="app_detailproduit")
+     * @Route("/produit/detail{id}", name="app_detailproduit")
      */
     public function detailproduit($id, ProduitRepository $produit): Response
     {
         $produits = $produit->find($id);
 
-        return $this->render('produit/indexdetail.html.twig', [
+        return $this->render('produit/detail.html.twig', [
             'produit' => $produits,
 
         ]);
