@@ -36,6 +36,41 @@
 				<h1 class="title">
 					LA PERLE PRECIEUSE</h1>
 
+					<!-- Button trigger modal -->
+					<div class="butticon">
+						<a class="material-symbols-outlined" title="mon compte" href="" type"button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							person</a>
+						<a class="material-symbols-outlined" title="mon panier" href="{{ path('app_panier') }}">
+							shopping_bag
+						</a>
+					</div>
+<!-- Modal -->
+
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+						<div class="modal-dialog modal-sm">
+
+							<div class="modal-content">
+								<div class="modal-header1">
+								{% if app.user %}
+											<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+										{% else %}
+					
+											<a class="nav-link" href="{{path('app_login')}}">Connexion</a>
+										{% endif %}
+									{# <a class="modal-title" type"button" id="exampleModalLabel" href="{{path('app_user')}}">mon compte</a> #}
+								</div>
+								<div class="modal-body1">
+									ou
+								</div>
+								<div class="modal-footer1">
+									<a type="button" href="{{path('app_registration')}}" class="">s'inscrire</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
 
 					<nav class="nav1 justify-content-center">
 

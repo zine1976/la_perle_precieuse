@@ -1,54 +1,65 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .nav1 {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 .title {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .ajoutprodtitre {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .imgreg {
-    height: 40px;
-    width: 40px;
-  }
-  .rowi {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 100px;
-
-  }
-  .carouseldet {
-    height: 250px;
-    width: 250px;
-  }
-  .surplus {
-    display: flex;
-    justify-content: space-around;
-    
-  
-  }
-  .surplus1 {
-    margin-right: 40px;
-    width: 400px;
-    height: 400px;
-  }
-  .modal-body {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    width: 400px;
-  }
-  .imgmod {
-    height: 270px;
-    width: 370px;
-  }
+  height: 40px;
+  width: 40px;
+}
+.rowi {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+.carouseldet {
+  height: 250px;
+  width: 250px;
+}
+.surplus {
+  display: flex;
+  justify-content: space-around;
+}
+.surplus1 {
+  margin-right: 40px;
+  width: 400px;
+  height: 400px;
+}
+.modal-body {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 400px;
+}
+.imgmod {
+  height: 270px;
+  width: 370px;
+}
+/* modalbase */
+.modal-body1 {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 290px;
+}
+.modal-footer1,
+.modal-header1 {
+  display: flex;
+  justify-content: center;
+}
