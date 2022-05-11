@@ -59,6 +59,33 @@ class Produit
      */
     private $commandeProduits;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix50ml;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix200ml;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $qte;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $qte50ml;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $qte200ml;
+
+    
+
     public function __construct()
     {
         $this->commandeProduits = new ArrayCollection();
@@ -182,4 +209,68 @@ class Produit
 
         return $this;
     }
+
+    public function getPrix50ml(): ?float
+    {
+        return $this->prix50ml;
+    }
+
+    public function setPrix50ml(float $prix50ml): self
+    {
+        $this->prix50ml = $prix50ml;
+
+        return $this;
+    }
+
+    public function getPrix200ml(): ?float
+    {
+        return $this->prix200ml;
+    }
+
+    public function setPrix200ml(float $prix200ml): self
+    {
+        $this->prix200ml = $prix200ml;
+
+        return $this;
+    }
+
+    public function getQte(): ?float
+    {
+        return $this->qte;
+    }
+
+    public function setQte(float $qte): self
+    {
+        $this->qte = $qte;
+
+        return $this;
+    }
+
+    public function getQte50ml(): ?float
+    {
+        return $this->qte50ml;
+    }
+
+    public function setQte50ml(float $qte50ml): self
+    {
+        $this->qte50ml = $qte50ml;
+
+        return $this;
+    }
+
+    public function getQte200ml(): ?float
+    {
+        return $this->qte200ml;
+    }
+
+    public function setQte200ml(float $qte200ml): self
+    {
+        $this->qte200ml = $qte200ml;
+
+        return $this;
+    }
+
+   
+
+    
 }

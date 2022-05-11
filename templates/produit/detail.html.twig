@@ -7,7 +7,7 @@
 
 	<h1>{{produit.nom}}</h1>
 	<div class="rowi">
-		<div class="col-4">
+		<div class="col-6">
 			<a type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal1">
 
 
@@ -30,85 +30,74 @@
 			</div>
 		</div>
 		{# modalfin #}
-		<div class="col-4">
+		<div class="col-6">
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      {# <img src="..." class="card-img-top" alt="..."> #}
+      <div class="card-body">
+        <h5 class="card-title">{{produit.prix}}
+					&nbsp;€</h5>
+        <p class="card-text">{{produit.qte}}
+					&nbsp;ML</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      {# <img src="..." class="card-img-top" alt="..."> #}
+      <div class="card-body">
+        <h5 class="card-title">{{produit.prix50ml}}
+					&nbsp;€</h5>
+        <p class="card-text">{{produit.qte50ml}}
+					&nbsp;ML</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{produit.prix200ml}}
+					&nbsp;€</h5>
+        <p class="card-text">{{produit.qte200ml}}
+					&nbsp;ML</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
 			<dl>
-
-				<dt>Nom</dt>
-				<dd>{{produit.nom}}</dd>
 
 				<dt>stock</dt>
 				<dd>{{produit.stock}}</dd>
 
-				<dt>Prix</dt>
-				<dd>{{produit.prix}}
-					&nbsp;€</dd>
+				<dt>EAU DE PARFUM VAPORISATEUR</dt>
+				{# <dd>{{produit.stock}}</dd> #}
+				
 
-				<dt>Ajouter au panier</dt>
-				<dd></dd>
+				<div class="pan">
 				{% if app.user and produit.stock > 0 %}
 					<td>
 						<form action="{{ path('add_panier', {produit: produit.id}) }}" method="post">
 							<input type="number" name="qtte" id="qtte" min="1" max="{{produit.stock}}" step="1" placeholder="Quantité" style="max-width: 50px;" value="1">
 							<button type="submit" class="btn btn-primary">
-								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								<i class="fa fa-shopping-cart" aria-hidden="true">&nbsp; Ajouter au panier</i>
 							</button>
 						</form>
 					</td>
+					</div>
 				{% elseif app.user and produit.stock == 0 %}
 					<td class="text-danger">Rupture de stock</td>
 				{% endif %}
 			</dl>
 
 		</div>
-		<div class="col-4">
-
-			<div class="carouseldet">
-				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-indicators">
-						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
-						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
+		{# <div class="col-4">
 
 
-					</div>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="{{ asset("boisdar.jpg")}}" class="d-block w-100" alt="...">
-							<div class="carousel-caption d-none d-md-block"></div>
-						</div>
-						<div class="carousel-item">
-							<img src="{{ asset("boisdar.jpg")}}" class="d-block w-100" alt="...">
-							<div class="carousel-caption d-none d-md-block"></div>
-						</div>
-						<div class="carousel-item">
-							<img src="{{ asset("boisdar.jpg")}}" class="d-block w-100" alt="...">
-							<div class="carousel-caption d-none d-md-block"></div>
-						</div>
-						<div class="carousel-item">
-							<img src="{{ asset("boisdar.jpg")}}" class="d-block w-100" alt="...">
-							<div class="carousel-caption d-none d-md-block"></div>
-						</div>
-						<div class="carousel-item">
-							<img src="{{ asset("boisdar.jpg")}}" class="d-block w-100" alt="...">
-							<div class="carousel-caption d-none d-md-block"></div>
-						</div>
-					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
-				</div>
-			</div>
-		</div>
-
+	</div> #}
 	</div>
-
+{# 1er accordion #}
 	<div class="tab2 accordion accordion-flush" id="accordionFlushExample">
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="flush-headingOne">
@@ -124,17 +113,17 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="flush-headingTwo">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-					<strong>Histoire</strong>
+					<strong>Pyramide olfactive</strong>
 				</button>
 			</h2>
 			<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-				<div class="accordion-body">{{produit.description}}</div>
+				<div class="accordion-body">{{produit.compo}}</div>
 			</div>
 		</div>
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="flush-headingThree">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-					<strong>Accordion Item #3</strong>
+					<strong>Contenance</strong>
 				</button>
 			</h2>
 			<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -144,6 +133,8 @@
 			</div>
 		</div>
 	</div>
+	{# fin 1er accordion #}
+	
 	<div class="tit">
 		<h2>Vous aimerez aussi</h2>
 		</div>

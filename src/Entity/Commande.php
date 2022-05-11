@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
+use App\Entity\CommandeProduit;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\CommandeRepository;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=CommandeRepository::class)
@@ -32,6 +34,16 @@ class Commande
      * @ORM\Column(type="date")
      */
     private $datecom;
+
+     /**
+     * @ORM\OneToMany(targetEntity=CommandeProduit::class, mappedBy="commande", orphanRemoval=true)
+     */
+    private $commandeProduits;
+
+    public function __construct()
+    {
+        $this->commandeProduits = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
