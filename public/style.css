@@ -63,6 +63,10 @@
   display: flex;
   justify-content: center;
 }
-.pan {
+.pan, .pan1 {
   margin-top: 20px;
+}
+.surplus2 {
+  width: 400px;
+  height: 400px;
 }

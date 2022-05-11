@@ -49,25 +49,13 @@ class Produit
      */
     private $Taux_tva;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $Compo;
+   
 
     /**
      * @ORM\OneToMany(targetEntity=CommandeProduit::class, mappedBy="Produit")
      */
     private $commandeProduits;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $prix50ml;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $prix200ml;
 
     /**
      * @ORM\Column(type="float")
@@ -75,16 +63,21 @@ class Produit
     private $qte;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="string", length=255)
      */
-    private $qte50ml;
+    private $noteDeTete;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="string", length=255)
      */
-    private $qte200ml;
+    private $noteDeCoeur;
 
-    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $noteDeFond;
+
+   
 
     public function __construct()
     {
@@ -168,18 +161,8 @@ class Produit
         return $this;
     }
 
-    public function getCompo(): ?string
-    {
-        return $this->Compo;
-    }
-
-    public function setCompo(string $Compo): self
-    {
-        $this->Compo = $Compo;
-
-        return $this;
-    }
-
+   
+  
     /**
      * @return Collection<int, CommandeProduit>
      */
@@ -210,29 +193,6 @@ class Produit
         return $this;
     }
 
-    public function getPrix50ml(): ?float
-    {
-        return $this->prix50ml;
-    }
-
-    public function setPrix50ml(float $prix50ml): self
-    {
-        $this->prix50ml = $prix50ml;
-
-        return $this;
-    }
-
-    public function getPrix200ml(): ?float
-    {
-        return $this->prix200ml;
-    }
-
-    public function setPrix200ml(float $prix200ml): self
-    {
-        $this->prix200ml = $prix200ml;
-
-        return $this;
-    }
 
     public function getQte(): ?float
     {
@@ -246,31 +206,41 @@ class Produit
         return $this;
     }
 
-    public function getQte50ml(): ?float
+    public function getNoteDeTete(): ?string
     {
-        return $this->qte50ml;
+        return $this->noteDeTete;
     }
 
-    public function setQte50ml(float $qte50ml): self
+    public function setNoteDeTete(string $noteDeTete): self
     {
-        $this->qte50ml = $qte50ml;
+        $this->noteDeTete = $noteDeTete;
 
         return $this;
     }
 
-    public function getQte200ml(): ?float
+    public function getNoteDeCoeur(): ?string
     {
-        return $this->qte200ml;
+        return $this->noteDeCoeur;
     }
 
-    public function setQte200ml(float $qte200ml): self
+    public function setNoteDeCoeur(string $noteDeCoeur): self
     {
-        $this->qte200ml = $qte200ml;
+        $this->noteDeCoeur = $noteDeCoeur;
 
         return $this;
     }
 
-   
+    public function getNoteDeFond(): ?string
+    {
+        return $this->noteDeFond;
+    }
 
-    
+    public function setNoteDeFond(string $noteDeFond): self
+    {
+        $this->noteDeFond = $noteDeFond;
+
+        return $this;
+    }
+
+
 }

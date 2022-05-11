@@ -7,12 +7,15 @@
 
 	<h1>{{produit.nom}}</h1>
 	<div class="rowi">
+{# <div class="surplus2"> #}
+
 		<div class="col-6">
+
 			<a type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal1">
 
-
-				<img src="{{produit.image}}" alt="" class="img-fluid thumbnail">
+				<img src="{{produit.image}}" alt="" class="card-img-top">
 			</a>
+
 		</div>
 
 
@@ -34,10 +37,12 @@
 		<div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card h-100">
-      {# <img src="..." class="card-img-top" alt="..."> #}
+
       <div class="card-body">
         <h5 class="card-title">{{produit.prix}}
 					&nbsp;€</h5>
+					<a class="nav-link" href="{{ path('app_accueil') }}"></a>
+
         <p class="card-text">{{produit.qte}}
 					&nbsp;ML</p>
       </div>
@@ -47,9 +52,11 @@
     <div class="card h-100">
       {# <img src="..." class="card-img-top" alt="..."> #}
       <div class="card-body">
-        <h5 class="card-title">{{produit.prix50ml}}
+        <h5 class="card-title">{{produit.prix}}
 					&nbsp;€</h5>
-        <p class="card-text">{{produit.qte50ml}}
+					<a class="nav-link" href="{{ path('app_accueil') }}"></a>
+
+        <p class="card-text">{{produit.qte}}
 					&nbsp;ML</p>
       </div>
     </div>
@@ -57,9 +64,11 @@
   <div class="col">
     <div class="card h-100">
       <div class="card-body">
-        <h5 class="card-title">{{produit.prix200ml}}
+        <h5 class="card-title" href="{{path('app_accueil')}}">{{produit.prix}}
 					&nbsp;€</h5>
-        <p class="card-text">{{produit.qte200ml}}
+					<a class="nav-link" href="{{ path('app_accueil') }}"></a>
+
+        <p class="card-text">{{produit.qte}}
 					&nbsp;ML</p>
       </div>
     </div>
@@ -67,13 +76,14 @@
   
 </div>
 			<dl>
+				<div class="pan1">
 
 				<dt>stock</dt>
 				<dd>{{produit.stock}}</dd>
 
 				<dt>EAU DE PARFUM VAPORISATEUR</dt>
 				{# <dd>{{produit.stock}}</dd> #}
-				
+				</div>
 
 				<div class="pan">
 				{% if app.user and produit.stock > 0 %}
@@ -117,7 +127,10 @@
 				</button>
 			</h2>
 			<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-				<div class="accordion-body">{{produit.compo}}</div>
+				<div class="accordion-body">note de tete :&nbsp;{{produit.noteDeTete}}</div>
+				<div class="accordion-body">note de coeur :&nbsp;{{produit.noteDeCoeur}}</div>
+				<div class="accordion-body">note de fond :&nbsp;{{produit.noteDeFond}}</div>
+
 			</div>
 		</div>
 		<div class="accordion-item">

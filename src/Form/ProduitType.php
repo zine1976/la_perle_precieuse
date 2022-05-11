@@ -19,15 +19,14 @@ class ProduitType extends AbstractType
             ->add('Nom', TextType::class)
             ->add('Stock', NumberType::class)
             ->add('Prix', NumberType::class)
-            ->add('Prix50ml', NumberType::class)
-            ->add('Prix200ml', NumberType::class)
             ->add('qte', NumberType::class)
-            ->add('qte50ml', NumberType::class)
-            ->add('qte200ml', NumberType::class)
             ->add('Description', TextType::class)
             ->add('Image', UrlType::class)
             ->add('Taux_tva', NumberType::class)
-            ->add('Compo', TextType::class)
+            ->add('noteDeTete', TextType::class)
+            ->add('noteDeCoeur', TextType::class)
+            ->add('noteDeFond', TextType::class)
+
             ->add('submit', SubmitType::class, [
                 'label' => 'Envoyer'
             ]);
