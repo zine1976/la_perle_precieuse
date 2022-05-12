@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}produits 50 ML
+{% endblock %}
+
+{% block body %}
+
+<div class="prodML">
+		<h1>Nos 100 ML</h1>
+	</div>
+	<div class="surplus">
+
+		<div class="surplus1">
+			<a href="{{path('app_detailproduit',{id:7})}}">
+				<img src="{{ asset("boisdar.jpg")}}" class="card-img-top" alt="..."></a>
+		</div>
+		<div class="surplus1">
+			<a href="{{path('app_detailproduit',{id:7})}}">
+				<img src="{{ asset("boisdar.jpg")}}" class="card-img-top" alt="..."></a>
+		</div>
+		<div class="surplus1">
+			<a href="{{path('app_detailproduit',{id:7})}}">
+				<img src="{{ asset("boisdar.jpg")}}" class="card-img-top" alt="..."></a>
+		</div>
+		<div class="surplus1">
+			<a href="{{path('app_detailproduit',{id:7})}}">
+				<img src="{{ asset("boisdar.jpg")}}" class="card-img-top" alt="..."></a>
+		</div>
+
+	</div>
+	
+
+{% endblock %}

@@ -33,5 +33,41 @@ class ProduitController extends AbstractController
 
         ]);
     }
-    
+      /**
+     * @Route("/produit/prod50ml", name="app_prod50ml")
+     */
+    public function produit50ml(ProduitRepository $produit): Response
+    {
+        $produits = $produit->findAll();
+
+        return $this->render('produit/prod50ml.html.twig', [
+            'produit' => $produits,
+
+        ]);
+    }
+      /**
+     * @Route("/produit/prod100ml", name="app_prod100ml")
+     */
+    public function produit100ml(ProduitRepository $produit): Response
+    {
+        $produits = $produit->findAll();
+
+        return $this->render('produit/prod100ml.html.twig', [
+            'produit' => $produits,
+
+        ]);
+    }
+      /**
+     * @Route("/produit/prod200ml", name="app_prod200ml")
+     */
+    public function produit200ml(ProduitRepository $produit): Response
+    {
+        $produits = $produit->findAll();
+
+        return $this->render('produit/prod200ml.html.twig', [
+            'produit' => $produits,
+
+        ]);
+    }
+
 }
