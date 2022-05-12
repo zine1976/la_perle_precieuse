@@ -31,4 +31,23 @@ class AjoutController extends AbstractController
             'form' => $formulaire->createView()
         ]);
     }
+     /**
+     * @Route("/ajout/modif/{id}", name="app_modif")
+     */
+    public function update(Request $request, produit $produit, ProduitRepository $produitRepository): Response
+    {
+        // $produits = new Produit;
+        $formulaire = $this->createForm(ProduitType::class, $produit);
+        $formulaire->handleRequest($request);
+
+        if ($formulaire->isSubmitted() && $formulaire->isValid()) {
+            $produitRepository->add($produit);
+            return $this->redirectToRoute('app_produit', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('ajout/modif.html.twig', [
+            'titre' => 'Nouveau produit',
+            'form' => $formulaire->createView()
+        ]);
+    }
 }

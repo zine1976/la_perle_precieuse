@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+#scroll_to_top {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  bottom: 50px;
+  right: 30px;
+}
 .nav1 {
   display: flex;
   justify-content: space-around;
@@ -47,8 +54,8 @@
   width: 400px;
 }
 .imgmod {
-  height: 270px;
-  width: 370px;
+  height: 570px;
+  width: 470px;
 }
 /* modalbase */
 .modal-body1 {
@@ -64,14 +71,28 @@
   display: flex;
   justify-content: center;
 }
-.pan, .pan1 {
+.pan, .pan1, .pan2 {
   margin-top: 20px;
+  margin-left: 40px;
 }
 .surplus2 {
   width: 300px;
   height: 500px;
 }
-/* .tab2 {
+.tab2 {
   margin-top: 30px;
-  margin-bottom: 30px;
-} */
+}
+.butticon {
+  display: flex;
+  justify-content: end;
+}
+.butticon1 {
+  padding-right: 10px;
+}
+.ajout {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+}
