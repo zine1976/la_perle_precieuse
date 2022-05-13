@@ -63,7 +63,7 @@
 							</div>
 							<div class="modal-footer1">
 								{% if app.user %}
-									<a class="modal-title" type"button" id="exampleModalLabel" href="{{path('app_user')}}">mon compte</a>
+									<a class="modal-title" type"button" id="exampleModalLabel" href="{{ path('app_utilisateur') }}">mon compte</a>
 								{% else %}
 									<a type="button" href="{{path('app_registration')}}" class="">s'inscrire</a>
 								{% endif %}
@@ -107,7 +107,7 @@
 				{% if is_granted('ROLE_ADMIN') %}
 					<a class="nav-link" href="">Commandes</a>
 					<a class="nav-link" href="{{path('app_produit')}}">Produits</a>
-					<a class="nav-link" href="{{path('app_userliste')}}">liste users</a>
+					<a class="nav-link" href="{{path('app_user_index')}}">liste users</a>
 					<a class="nav-link" href="{{path('app_ajout')}}">Ajouter un produit</a>
 				{% endif %}
 

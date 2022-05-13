@@ -89,7 +89,7 @@
 .butticon1 {
   padding-right: 10px;
 }
-.ajout {
+.ajout, .compteperso {
   display: flex;
   justify-content: space-around;
   margin-bottom: 50px;

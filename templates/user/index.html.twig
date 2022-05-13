@@ -1,33 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}mon compte
-{% endblock %}
+{% block title %}User index{% endblock %}
 
 {% block body %}
 
+	<div class="ajoutprodtitre">
 
-	<div class="compte">
-		<h1>Mon compte</h1>
-	</div>
-	<div class="compteperso">
-		<div class="comp container col-4>
-						<ol class="list-group list-group-numbered">
-			<li class="list-group-item">{{ app.user.nom }}</li>
-			<li class="list-group-item">{{ app.user.prenom }}</li>
-			<li class="list-group-item">{{ app.user.email }}</li>
-</ol>
-<div class="buttmodif">
-
-		<a class="btn btn-danger" type="button">modifier vos données</a>
+    <h1>Liste des utilisateurs</h1>
 </div>
-</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
 
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.Prenom }}</td>
+                <td>{{ user.email }}</td>
 
+                <td>
+                    <a class="btn btn-danger" href="{{ path('app_user_delete', {'id': user.id}) }}">Supprimer un utilisateur</a>
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+									<a href="{{ path('app_user_show', {'id': user.id}) }}">detail</a>
 
-	<div class="col-4">
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-
-		{# <img src="{{asset("lampe1.jpg")}}" alt="" class="img-fluid thumbnail"> #}
-	</div>
-
-</div>{% endblock %}
+    <a href="{{ path('app_user_new') }}">Create new</a>
+{% endblock %}

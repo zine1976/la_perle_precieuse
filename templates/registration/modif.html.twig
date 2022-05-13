@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier coordonnées
+{% endblock %}
+
+{% block body %}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<div class="ajoutprodtitre">
+
+		<h1>Modifier ses coordonnées</h1>
+	</div>
+	<div class="register">
+
+		<div class="col-4">
+
+			{{ form_start(registration, {'attr':{'novalidate': 'novalidate'}}) }}
+
+			<div class"form-group">{{ form_row(registration.nom,
+         {'attr':{'class':'form-control'}}) }}
+			</div>
+			<div class"form-group">
+				{{ form_row(registration.prenom, 
+        {'attr':{'class':'form-control'}}) }}
+			</div>
+			
+
+			<div class"form-group">
+				{{ form_row(registration.email,
+        {'attr':{'class':'form-control'}}) }}
+			</div>
+
+			<div class"form-group">
+				{{ form_row(registration.plainPassword,
+        {'attr':{'class':'form-control'}, 
+							            label: 'Password'
+							        }) }}
+			</div>
+
+			<div class"form-group">
+				{{ form_row(registration.agreeTerms,
+        ) }}
+			</div>
+			<div class="buttregis">
+				<button type="submit" class="btn btn-success">Envoyer</button>
+			</div>
+			{{ form_end(registration) }}
+		</div>
+		
+	</div>
+{% endblock %}
