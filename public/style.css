@@ -21,6 +21,10 @@
   display: flex;
   justify-content: center;
 }
+.glob50ml {
+  display: flex;
+  justify-content: space-between;
+}
 .ajoutprodtitre {
   display: flex;
   justify-content: center;
@@ -51,8 +55,8 @@
 }
 .surplus1 {
   margin-right: 40px;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 .modal-body {
   background-color: white;
@@ -89,7 +93,16 @@
   height: 500px;
 }
 .surplus3 {
-  margin-left: 80px;
+  margin-left: 50px;
+}
+.logocof {
+  width: 50px;
+  height: 50px;
+}
+.card-bodycof {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 .surplus4 {
   display: flex;
