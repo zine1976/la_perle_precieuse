@@ -22,6 +22,8 @@
 
 					<th>image</th>
 					<th>quantité</th>
+					<th>nom</th>
+
 
 				</tr>
 			</thead>
@@ -31,6 +33,7 @@
 						<td>{{ commande.id }}</td>
 						<td>{{ commande.datecom|date('d/m/Y') }}</td>
 						<td>{{ commande.etat }}</td>
+
 
 						<td>
 							{% for cp in commande.commandeProduits %}
@@ -44,6 +47,7 @@
 						<td>{{(cp.quantite)}}</td>
 
 					 {% endfor %}
+                    
 
 				</tr>
 

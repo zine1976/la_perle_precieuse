@@ -40,6 +40,8 @@ class Commande
      */
     private $commandeProduits;
 
+   
+
     public function __construct()
     {
         $this->commandeProduits = new ArrayCollection();
@@ -115,4 +117,8 @@ class Commande
 
         return $this;
     }
+
+    
+
+    
 }
