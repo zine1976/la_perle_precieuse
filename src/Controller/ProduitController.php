@@ -71,5 +71,16 @@ class ProduitController extends AbstractController
 
         ]);
     }
-    
+    /**
+     * @Route("/produit/detail50ml", name="app_detailproduit50ml")
+     */
+    public function detailproduit50ml( ProduitRepository $produit): Response
+    {
+        $produits = $produit->findAll();
+
+        return $this->render('produit/detail50ml.html.twig', [
+            'produit' => $produits,
+
+        ]);
+    }
 }

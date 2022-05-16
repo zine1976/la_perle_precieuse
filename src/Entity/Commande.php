@@ -36,7 +36,7 @@ class Commande
     private $datecom;
 
      /**
-     * @ORM\OneToMany(targetEntity=CommandeProduit::class, mappedBy="commande", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=CommandeProduit::class, mappedBy="commande", cascade={"persist"})
      */
     private $commandeProduits;
 

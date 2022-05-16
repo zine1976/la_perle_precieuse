@@ -26,6 +26,7 @@ class ProduitType extends AbstractType
             ->add('noteDeTete', TextType::class)
             ->add('noteDeCoeur', TextType::class)
             ->add('noteDeFond', TextType::class)
+            ->add('caractere', TextType::class)
 
             ->add('submit', SubmitType::class, [
                 'label' => 'Envoyer'

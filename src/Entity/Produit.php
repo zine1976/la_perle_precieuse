@@ -77,6 +77,21 @@ class Produit
      */
     private $noteDeFond;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $caractere;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $qte50ml;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix50ml;
+
    
 
     public function __construct()
@@ -238,6 +253,42 @@ class Produit
     public function setNoteDeFond(string $noteDeFond): self
     {
         $this->noteDeFond = $noteDeFond;
+
+        return $this;
+    }
+
+    public function getCaractere(): ?string
+    {
+        return $this->caractere;
+    }
+
+    public function setCaractere(string $caractere): self
+    {
+        $this->caractere = $caractere;
+
+        return $this;
+    }
+
+    public function getQte50ml(): ?float
+    {
+        return $this->qte50ml;
+    }
+
+    public function setQte50ml(float $qte50ml): self
+    {
+        $this->qte50ml = $qte50ml;
+
+        return $this;
+    }
+
+    public function getPrix50ml(): ?float
+    {
+        return $this->prix50ml;
+    }
+
+    public function setPrix50ml(float $prix50ml): self
+    {
+        $this->prix50ml = $prix50ml;
 
         return $this;
     }
