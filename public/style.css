@@ -45,6 +45,12 @@
   margin-bottom: 10px;
   margin-top: 40px;
 }
+.rowi1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  /* margin-top: 40px; */
+}
 .carouseldet {
   height: 250px;
   width: 250px;
@@ -95,6 +101,10 @@
 .surplus3 {
   margin-left: 50px;
 }
+.surplus4 {
+  width: 700px;
+  height: 500px;
+}
 .logocof {
   width: 50px;
   height: 50px;
@@ -121,6 +131,13 @@
 }
 .butticon1 {
   padding-right: 10px;
+}
+.butticon2 {
+  display: flex;
+  justify-content:start;
+  width: 90px;
+  height: 90px;
+/* padding-top: 60px; */
 }
 .ajout, .compteperso {
   display: flex;

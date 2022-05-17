@@ -83,4 +83,28 @@ class ProduitController extends AbstractController
 
         ]);
     }
+      /**
+     * @Route("/produit/cof", name="app_cof")
+     */
+    public function cof(ProduitRepository $produit): Response
+    {
+        $produits = $produit->findAll();
+
+        return $this->render('produit/cof.html.twig', [
+            'produit' => $produits,
+
+        ]);
+    }
+       /**
+     * @Route("/produit/cofdetail{id}", name="app_cofdetail")
+     */
+    public function detailcof($id, ProduitRepository $produit): Response
+    {
+        $produits = $produit->find($id);
+
+        return $this->render('produit/cofdetail.html.twig', [
+            'produit' => $produits,
+
+        ]);
+    }
 }

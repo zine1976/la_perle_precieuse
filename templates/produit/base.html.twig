@@ -32,19 +32,11 @@
 
 			<div class="container">
 				<h2 class="title">LUXURY PERFUMES</h2>
-				
 				<h1 class="title">
 					COLLECTION PRECIEUSE</h1>
-					
-					<div class="butticon2">
-					<img src="{{ asset("logo.jpg")}}" class="img-fluid" alt="">
-				</div>
-
-
 
 				<!-- Button trigger modal -->
 				<div class="butticon">
-				
 					<a class="butticon1 material-symbols-outlined" title="mon compte" href="" type"button" data-bs-toggle="modal" data-bs-target="#exampleModal">
 						person</a>
 					<a class="material-symbols-outlined" title="mon panier" href="{{ path('app_panier') }}">
@@ -82,47 +74,36 @@
 				</div>
 
 			</div>
+
 			<nav class="nav1 justify-content-center">
 
-				
+
 				<a class="nav-link" href="{{path('app_accueil')}}">Accueil</a>
 
 				<a class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Collection
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-						<li>
-							<a class="dropdown-item" href="{{path('app_prod50ml')}}">50 ML</a>
-						</li>
-						<li><hr class="dropdown-divider"></li>
-						<li>
-							<a class="dropdown-item" href="{{path('app_prod100ml')}}">100 ML</a>
-						</li>
-						<li><hr class="dropdown-divider"></li>
-						<li>
-							<a class="dropdown-item" href="{{path('app_prod200ml')}}">200 ML</a>
-						</li>
-					</ul>
-				</a>
+          <a class="nav-link dropdown-toggle" href="" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Collection
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="{{path('app_prod50ml')}}">50 ML</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{path('app_prod100ml')}}">100 ML</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{path('app_prod200ml')}}">200 ML</a></li>
+          </ul>
+        </a>
 
 				<a class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Coffrets
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-						<li>
-							<a class="dropdown-item" href="{{path('app_cof')}}">50 ML</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="#">100 ML</a>
-						</li>
-						{# <li><hr class="dropdown-divider"></li> #}
-						<li>
-							<a class="dropdown-item" href="#">200 ML</a>
-						</li>
-					</ul>
-				</a>
+          <a class="nav-link dropdown-toggle" href="" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Coffrets
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="{{path('app_cof')}}">50 ML</a></li>
+            <li><a class="dropdown-item" href="#">100 ML</a></li>
+            {# <li><hr class="dropdown-divider"></li> #}
+            <li><a class="dropdown-item" href="#">200 ML</a></li>
+          </ul>
+        </a>
 
 				{% if is_granted('ROLE_ADMIN') %}
 					<a class="nav-link" href="{{path('app_commande')}}">Commandes</a>
@@ -130,6 +111,9 @@
 					<a class="nav-link" href="{{path('app_user_index')}}">liste users</a>
 					<a class="nav-link" href="{{path('app_ajout')}}">Ajouter un produit</a>
 				{% endif %}
+
+				
+
 
 
 			</nav>
@@ -150,8 +134,7 @@
 			<div class="fin">
 				<nav class="nav justify-content-center">
 					{# <a class="nav-link" href="{{path('app_reglement')}}">regles de confidentialité</a> #}
-					{# <a class="nav-link" href="{{path('app_cgu')}}">conditions d'utilisation</a> #}
-						<a class="nav-link" href="{{path('app_contact')}}"> contact</a>
+					{# <a class="nav-link" href="{{path('app_cgu')}}">conditions d'utilisation</a> #}<a class="nav-link" href="{{path('app_contact')}}"> contact</a>
 					<a class="nav-link" href="{{path('app_retour')}}">politique de retour</a>
 
 				</nav>
@@ -161,3 +144,4 @@
 			</div>
 		</body>
 	</html>
+
