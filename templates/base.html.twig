@@ -63,7 +63,7 @@
 							</div>
 							<div class="modal-footer1">
 								{% if app.user %}
-									<a class="modal-title" type"button" id="exampleModalLabel" href="{{ path('app_utilisateur') }}">mon compte</a>
+									<a class="modal-title" type"button" id="exampleModalLabel" href="{{path('app_user_show',{id: app.user.id})}}">mon compte</a>
 								{% else %}
 									<a type="button" href="{{path('app_registration')}}" class="">s'inscrire</a>
 								{% endif %}
@@ -79,6 +79,7 @@
 
 
 				<a class="nav-link" href="{{path('app_accueil')}}">Accueil</a>
+
 				<a class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Collection
