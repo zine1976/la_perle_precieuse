@@ -8,7 +8,6 @@
 
 	<div class="example-wrapper">
 <div class="ajoutprodtitre">
-
 		<h1>Liste des commandes</h1>
 		</div>
 		<table class="table">
@@ -22,7 +21,9 @@
 
 					<th>image</th>
 					<th>quantité</th>
-					<th>nom</th>
+					<th>id User</th>
+					<th>Nom</th>
+
 
 
 				</tr>
@@ -34,29 +35,26 @@
 						<td>{{ commande.datecom|date('d/m/Y') }}</td>
 						<td>{{ commande.etat }}</td>
 
-
+{% for cp in commande.commandeProduits %}
 						<td>
-							{% for cp in commande.commandeProduits %}
-								{{(cp.produit.nom) }}
+								{{ cp.produit.nom }}
 						</td> 
 						<td>{{(cp.produit.qte)}}</td>
-
-						<td>			<img src="{{cp.produit.image}}" alt="" class="imgreg img-fluid thumbnail">
+						<td><img src="{{cp.produit.image}}" alt="" class="imgreg img-fluid thumbnail">
 </td>
-
 						<td>{{(cp.quantite)}}</td>
 					 {% endfor %}
 
-							<td>{% for cu in commande.commandeUser %}
-						{{ cu.User.id }}</td>
+							{# {% for cu in commande.user %}
 
-
-					 {% endfor %}
-                    
-
-				</tr>
-
-
+							<td>
+						{{(cu.user.id)}}</td>
+					<td>{{(cu.user.id)}}</td>
+					 {% endfor %} #}
+							
+</tr>
+                  
+				
 			{% endfor %}
 		</tbody>
 	</table>

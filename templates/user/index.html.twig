@@ -26,6 +26,7 @@
                 <td>{{ user.Prenom }}</td>
                 <td>{{ user.email }}</td>
 
+
                 <td>
                     <a class="btn btn-danger" href="{{ path('app_user_delete', {'id': user.id}) }}">Supprimer un utilisateur</a>
                     <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
