@@ -13,14 +13,12 @@ class CommandeController extends AbstractController
     /**
      * @Route("/commande", name="app_commande")
      */
-    public function index(CommandeRepository $commande, UserRepository $user): Response
+    public function index(CommandeRepository $commandes): Response
     {
-        $commandes = $commande->findAll();
-        $users = $user->findAll();
+        $commandes = $commandes->findAll();
 
         return $this->render('commande/index.html.twig', [
             'commandes' => $commandes,
-            'user' => $users,
 
         ]);
     }

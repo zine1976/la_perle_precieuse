@@ -50,7 +50,7 @@ class PaymentController extends AbstractController
 
         $commande->setDateCom(new DateTime);
         $user = $security->getUser();
-        $commande->setCommandeUser($user);
+        $commande->setUser($user);
 
         $line_items = [];
 
