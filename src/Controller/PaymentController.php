@@ -16,8 +16,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\Security\Core\Security as CoreSecurity;
 
 /**
  * @IsGranted("ROLE_USER")
@@ -28,7 +30,7 @@ class PaymentController extends AbstractController
    /**
      * @Route("/payment", name="app_payment")
      */
-    public function index(SessionInterface $session, ProduitRepository $pr, CommandeRepository $cr, ManagerRegistry $mr): Response
+    public function index(SessionInterface $session, ProduitRepository $pr, CommandeRepository $cr, ManagerRegistry $mr, CoreSecurity $security): Response
     {
         $panier = $session->get('panier', []);
 
@@ -47,6 +49,8 @@ class PaymentController extends AbstractController
         $commande->setToken(hash('sha256', random_bytes(32)));
 
         $commande->setDateCom(new DateTime);
+        $user = $security->getUser();
+        $commande->setCommandeUser($user);
 
         $line_items = [];
 
@@ -78,6 +82,7 @@ class PaymentController extends AbstractController
         ]);
 
         $cr->add($commande);
+
 
         return $this->redirect($checkout->url);
     }

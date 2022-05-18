@@ -45,6 +45,11 @@
 </td>
 
 						<td>{{(cp.quantite)}}</td>
+					 {% endfor %}
+
+							<td>{% for cu in commande.commandeUser %}
+						{{ cu.User.id }}</td>
+
 
 					 {% endfor %}
                     

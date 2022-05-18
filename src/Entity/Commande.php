@@ -40,6 +40,12 @@ class Commande
      */
     private $commandeProduits;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="commandes")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $commandeUser;
+
    
 
     public function __construct()
@@ -114,6 +120,18 @@ class Commande
                 $commandeProduit->setCommande(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCommandeUser(): ?User
+    {
+        return $this->commandeUser;
+    }
+
+    public function setCommandeUser(?User $commandeUser): self
+    {
+        $this->commandeUser = $commandeUser;
 
         return $this;
     }
