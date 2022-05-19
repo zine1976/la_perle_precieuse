@@ -47,7 +47,14 @@
 						<td>
 														<a class="btn btn-danger" href="{{path('app_delete',{id: commande.id})}}">Supprimer une commande</a>
 													</td>
-						
+						{# {% for ci in commande.user %}
+							<td>
+								{{ ci.user.nom }}
+							</td>
+							<td>
+								{{ ci.user.prenom }}
+							</td>
+				{% endfor %} #}
 
 					</tr>
 
