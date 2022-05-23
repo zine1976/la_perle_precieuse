@@ -98,9 +98,7 @@
   margin-top: 20px;
   margin-left: 40px;
 }
-.pano {
-  
-}
+
 .surplus2 {
   width: 300px;
   height: 500px;
@@ -154,4 +152,22 @@
   margin-bottom: 50px;
   margin-top: 50px;
 
+}
+.liv, .fact {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#adressfact_submit, #adressliv_submit, #produit_submit {
+  margin-top: 20px;
+}
+.btn1 {
+  margin-top: 20px;
+}
+.progress {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
