@@ -82,16 +82,9 @@ class Produit
      */
     private $caractere;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $qte50ml;
+  
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $prix50ml;
-
+ 
    
 
     public function __construct()
@@ -269,29 +262,8 @@ class Produit
         return $this;
     }
 
-    public function getQte50ml(): ?float
-    {
-        return $this->qte50ml;
-    }
+   
 
-    public function setQte50ml(float $qte50ml): self
-    {
-        $this->qte50ml = $qte50ml;
-
-        return $this;
-    }
-
-    public function getPrix50ml(): ?float
-    {
-        return $this->prix50ml;
-    }
-
-    public function setPrix50ml(float $prix50ml): self
-    {
-        $this->prix50ml = $prix50ml;
-
-        return $this;
-    }
-
+    
 
 }

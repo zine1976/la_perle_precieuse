@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use Exception;
 use App\Entity\Produit;
 use App\Form\ProduitType;
 use App\Repository\ProduitRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,14 +25,41 @@ class AjoutController extends AbstractController
 
         if ($formulaire->isSubmitted() && $formulaire->isValid()) {
             $produit->add($produits);
-            return $this->redirectToRoute('app_produit');
+            $image = $formulaire->get('image')->getData();
+            $ok = true;
+
+            if ($image) {
+                $newName = 'prod_' . uniqid() . '.' . $image->guessExtension(); // Je crée un nouveau nom
+
+                try {
+                    // Je déplace l'image vers sa nouvelle destination
+                    $image->move(
+                        $this->getParameter('image_directory'), // Le dossier de destination
+                        $newName // Le nom du fichier à sa nouvelle destination
+                    );
+
+                    $produit->setImage($newName);
+                } catch (Exception $e) {
+                    $this->addFlash('errors', 'Un problème est survenu pendant l\'upload du fichier.');
+                    $ok = false;
+                }
+            }
+
+            if ($ok) {
+                $produit->add($produits);
+                return $this->redirectToRoute('app_produit');
+            }
+           
+               
         }
 
         return $this->render('ajout/index.html.twig', [
             'titre' => 'Nouveau produit',
             'form' => $formulaire->createView()
         ]);
+       
     }
+
      /**
      * @Route("/ajout/modif/{id}", name="app_modif")
      */
