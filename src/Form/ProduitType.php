@@ -24,7 +24,6 @@ class ProduitType extends AbstractType
             ->add('Prix', NumberType::class)
             ->add('qte', NumberType::class)
             ->add('Description', TextType::class)
-            // ->add('Image', UrlType::class)
             ->add('Taux_tva', NumberType::class)
             ->add('noteDeTete', TextType::class)
             ->add('noteDeCoeur', TextType::class)

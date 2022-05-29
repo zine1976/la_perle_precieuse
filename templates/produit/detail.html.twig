@@ -11,7 +11,7 @@
 
 			<a type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal1">
 
-				<img src="{{produit.image}}" alt="" class="card-img-top">
+				<img src="{{asset('uploads/' ~ produit.image) }}" alt="" class="card-img-top">
 			</a>
 
 		</div>
@@ -24,7 +24,7 @@
 
 					<div class="modal-body">
 
-						<img src="{{produit.image}}" alt="" class="imgmod img-fluid thumbnail">
+						<img src="{{asset('uploads/' ~ produit.image) }}" alt="" class="imgmod img-fluid thumbnail">
 					</div>
 
 				</div>
