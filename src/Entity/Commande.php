@@ -137,6 +137,11 @@ class Commande
 
         return $this;
     }
+    // public function __toString()
+    // {
+    //      $this->getEtat(). '' . $this->getId();
+    // }
+
 
           
     

@@ -6,6 +6,7 @@ use App\Entity\Commande;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class CommandeCrudController extends AbstractCrudController
@@ -21,8 +22,8 @@ class CommandeCrudController extends AbstractCrudController
         return [
             // IdField::new('id'),
            
-             // DateField::new('datecom'),
-            // TextField::new('user'),
+            //  DateTimeField::new('datecom'),
+            IdField::new('user.getFullName'),
             TextField::new('etat'),
         ];
     }
