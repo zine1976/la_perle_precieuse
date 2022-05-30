@@ -20,7 +20,7 @@ class CommandeCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            // IdField::new('id'),
+            IdField::new('id'),
            
             //  DateTimeField::new('datecom'),
             IdField::new('user.getFullName'),
