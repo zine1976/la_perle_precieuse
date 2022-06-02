@@ -201,6 +201,9 @@ justify-content: space-around; }
   display: flex;
   justify-content: center;
 }
+.totalpanier {
+  margin-left: 770px;
+}
 /* .fin {
   position: absolute; 
      right: auto;
