@@ -44,10 +44,7 @@ class Produit
      */
     private $Image;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $Taux_tva;
+   
 
    
 
@@ -157,17 +154,7 @@ class Produit
         return $this;
     }
 
-    public function getTauxTva(): ?float
-    {
-        return $this->Taux_tva;
-    }
-
-    public function setTauxTva(float $Taux_tva): self
-    {
-        $this->Taux_tva = $Taux_tva;
-
-        return $this;
-    }
+   
 
    
   
