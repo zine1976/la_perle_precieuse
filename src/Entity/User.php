@@ -87,9 +87,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $villefact;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Adresselivraison::class, mappedBy="user")
+     */
+    private $adresselivraisons;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Adressefacturation::class, mappedBy="user")
+     */
+    private $adressefacturations;
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
+        $this->adresselivraisons = new ArrayCollection();
+        $this->adressefacturations = new ArrayCollection();
     }
 
    
@@ -330,6 +342,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getFullname(): ?string
     {
         return $this->getNom() . ' ' . $this->getPrenom();
+    }
+
+    /**
+     * @return Collection<int, Adresselivraison>
+     */
+    public function getAdresselivraisons(): Collection
+    {
+        return $this->adresselivraisons;
+    }
+
+    public function addAdresselivraison(Adresselivraison $adresselivraison): self
+    {
+        if (!$this->adresselivraisons->contains($adresselivraison)) {
+            $this->adresselivraisons[] = $adresselivraison;
+            $adresselivraison->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdresselivraison(Adresselivraison $adresselivraison): self
+    {
+        if ($this->adresselivraisons->removeElement($adresselivraison)) {
+            // set the owning side to null (unless already changed)
+            if ($adresselivraison->getUser() === $this) {
+                $adresselivraison->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Adressefacturation>
+     */
+    public function getAdressefacturations(): Collection
+    {
+        return $this->adressefacturations;
+    }
+
+    public function addAdressefacturation(Adressefacturation $adressefacturation): self
+    {
+        if (!$this->adressefacturations->contains($adressefacturation)) {
+            $this->adressefacturations[] = $adressefacturation;
+            $adressefacturation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdressefacturation(Adressefacturation $adressefacturation): self
+    {
+        if ($this->adressefacturations->removeElement($adressefacturation)) {
+            // set the owning side to null (unless already changed)
+            if ($adressefacturation->getUser() === $this) {
+                $adressefacturation->setUser(null);
+            }
+        }
+
+        return $this;
     }
 
    
